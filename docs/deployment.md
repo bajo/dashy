@@ -66,7 +66,7 @@ Dashy has a built container image hosted on [Docker Hub](https://hub.docker.com/
 ```bash
 docker run -d \
   -p 8080:80 \
-  -v /root/my-local-conf.yml:/app/public/conf.yml \
+  -v /root/my-local-conf.yml:/app/public/config/conf.yml \
   --name my-dashboard \
   --restart=always \
   lissy93/dashy:latest
@@ -108,7 +108,7 @@ services:
     container_name: Dashy
     # Pass in your config file below, by specifying the path on your host machine
     # volumes:
-      # - /root/my-config.yml:/app/public/conf.yml
+      # - /root/my-config.yml:/app/public/config/conf.yml
     ports:
       - 4000:80
     # Set any environmental variables
@@ -159,7 +159,7 @@ Installing dashy is really simply and fast:
 ```bash
 docker run -d \
   -p 4000:80 \
-  -v /volume1/docker/dashy/my-local-conf.yml:/app/public/conf.yml \
+  -v /volume1/docker/dashy/my-local-conf.yml:/app/public/config/conf.yml \
   --name dashy \
   --restart=always \
   lissy93/dashy:latest
@@ -174,7 +174,7 @@ dashy should be up within 1-2min after you've started the install task procedure
 If you do not want to use Docker, you can run Dashy directly on your host system. For this, you will need both [git](https://git-scm.com/downloads) and the latest or LTS version of [Node.js](https://nodejs.org/) installed, and optionally [yarn](https://yarnpkg.com/)
 
 1. Get Code: `git clone https://github.com/Lissy93/dashy.git` and `cd dashy`
-2. Configuration: Fill in you're settings in `./public/conf.yml`
+2. Configuration: Fill in you're settings in `./public/config/conf.yml`
 3. Install dependencies: `yarn`
 4. Build: `yarn build`
 5. Run: `yarn start`
